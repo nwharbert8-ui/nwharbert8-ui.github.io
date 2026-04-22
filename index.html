@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inner Architecture LLC — Computational Genomics Research</title>
-<meta name="description" content="Inner Architecture LLC conducts systematic computational genomics research investigating gene expression networks, neurovascular biology, and molecular quality control mechanisms in human tissues.">
-<meta name="keywords" content="computational genomics, gene expression, co-expression analysis, neurovascular biology, SIGMAR1, INMT, neurodegeneration, Inner Architecture LLC">
-<meta property="og:title" content="Inner Architecture LLC — Computational Genomics Research">
-<meta property="og:description" content="Systematic computational genomics research investigating gene expression networks, neurovascular biology, and molecular quality control.">
+<title>Inner Architecture LLC — Cross-Domain Correlation Architecture Research</title>
+<meta name="description" content="Inner Architecture LLC develops and validates a correlation-architecture methodology (weighted Jaccard) for detecting network reorganization across biology, industrial systems, finance, ecology, and neuroscience.">
+<meta name="keywords" content="weighted Jaccard, correlation architecture, network reorganization, cross-domain methodology, computational genomics, predictive maintenance, functional connectivity, Inner Architecture LLC, Drake Harbert">
+<meta property="og:title" content="Inner Architecture LLC — Cross-Domain Correlation Architecture Research">
+<meta property="og:description" content="Weighted Jaccard methodology validated across biology, industrial systems, finance, ecology, and neuroscience. 20 manuscripts across 15 journals.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://innerarchitecturellc.com">
 
@@ -214,7 +214,7 @@ a:hover { color: var(--text-0); }
   font-weight: 400; line-height: 1.25; color: var(--text-0); margin-bottom: 0.75rem;
 }
 .section-desc {
-  font-size: 0.95rem; color: var(--text-2); max-width: 580px;
+  font-size: 0.95rem; color: var(--text-2); max-width: 680px;
   line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300;
 }
 .sep {
@@ -273,6 +273,8 @@ a:hover { color: var(--text-0); }
 }
 .pub:hover { border-color: var(--border-2); background: var(--bg-3); transform: translateX(3px); }
 .pub:hover::after { background: var(--blue); }
+.pub.accepted::after { background: var(--green); }
+.pub.accepted:hover::after { background: var(--green); }
 .pub-status {
   font-family: var(--mono); font-size: 0.62rem; font-weight: 500;
   letter-spacing: 0.14em; text-transform: uppercase; padding: 0.25rem 0.65rem;
@@ -280,7 +282,8 @@ a:hover { color: var(--text-0); }
 }
 .pub-status.review { background: var(--blue-subtle); color: var(--blue); }
 .pub-status.complete { background: var(--gold-subtle); color: var(--gold); }
-.pub-status.revision { background: var(--green-subtle); color: var(--green); }
+.pub-status.revision { background: var(--gold-subtle); color: var(--gold); }
+.pub-status.accepted { background: var(--green-subtle); color: var(--green); }
 .pub h3 {
   font-family: var(--serif); font-size: 1.08rem; font-weight: 400;
   line-height: 1.4; color: var(--text-0); margin-bottom: 0.4rem;
@@ -288,6 +291,44 @@ a:hover { color: var(--text-0); }
 .pub-journal { font-family: var(--mono); font-size: 0.75rem; color: var(--text-3); margin-bottom: 0.65rem; }
 .pub-journal em { font-style: normal; color: var(--text-2); }
 .pub p.pub-abstract { font-size: 0.88rem; color: var(--text-2); line-height: 1.75; }
+
+/* Compact pipeline list — shows all 20 manuscripts without overwhelming */
+.pipeline-wrap { margin-top: 3rem; }
+.pipeline-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;
+}
+.pipeline-head h3 {
+  font-family: var(--serif); font-size: 1.25rem; font-weight: 400; color: var(--text-0);
+}
+.pipeline-head p { font-size: 0.82rem; color: var(--text-3); font-family: var(--mono); letter-spacing: 0.05em; }
+.pipeline-list {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--border-1); border-radius: var(--radius);
+  overflow: hidden; background: var(--bg-2);
+}
+.pipe-row {
+  display: grid;
+  grid-template-columns: 1fr 180px 130px;
+  gap: 1rem; align-items: center;
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--border-1);
+  transition: background 0.25s;
+}
+.pipe-row:last-child { border-bottom: none; }
+.pipe-row:hover { background: var(--bg-3); }
+.pipe-title { font-size: 0.88rem; color: var(--text-1); font-weight: 400; line-height: 1.4; }
+.pipe-journal { font-family: var(--mono); font-size: 0.72rem; color: var(--text-3); letter-spacing: 0.02em; }
+.pipe-status {
+  font-family: var(--mono); font-size: 0.6rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; padding: 0.22rem 0.6rem;
+  border-radius: 100px; display: inline-block; justify-self: start;
+}
+.pipe-status.accepted { background: var(--green-subtle); color: var(--green); }
+.pipe-status.review   { background: var(--blue-subtle); color: var(--blue); }
+.pipe-status.revision { background: var(--gold-subtle); color: var(--gold); }
+.pipe-status.ready    { background: rgba(200,204,214,0.05); color: var(--text-1); border: 1px solid var(--border-2); }
+.pipe-status.pipeline { background: rgba(137,145,164,0.05); color: var(--text-2); border: 1px solid var(--border-1); }
 
 .focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 3.5rem; }
 .focus {
@@ -306,6 +347,23 @@ a:hover { color: var(--text-0); }
 
 
 /* ═══ METHODOLOGY ═══ */
+.method-intro {
+  background: var(--bg-2); border: 1px solid var(--border-1);
+  border-radius: var(--radius); padding: 2rem 2.25rem;
+  margin-bottom: 2rem;
+  background-image: radial-gradient(ellipse 400px 200px at 0% 0%, var(--blue-subtle), transparent);
+}
+.method-intro h4 {
+  font-family: var(--serif); font-size: 1.15rem; color: var(--text-0);
+  margin-bottom: 0.75rem; font-weight: 400;
+}
+.method-intro p { color: var(--text-2); line-height: 1.85; font-weight: 300; font-size: 0.95rem; }
+.method-intro .wj-eq {
+  font-family: var(--mono); font-size: 0.82rem; color: var(--text-1);
+  background: var(--bg-0); border: 1px solid var(--border-1);
+  border-radius: var(--radius-sm); padding: 0.75rem 1rem;
+  margin-top: 1rem; display: inline-block;
+}
 .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 .method-step {
   background: var(--bg-2); border: 1px solid var(--border-1);
@@ -320,6 +378,7 @@ a:hover { color: var(--text-0); }
 
 
 /* ═══ IP / PATENT ═══ */
+.ip-stack { display: flex; flex-direction: column; gap: 1.25rem; }
 .ip-card {
   background: var(--bg-2); border: 1px solid var(--border-2);
   border-radius: 12px; padding: 2.5rem;
@@ -405,6 +464,7 @@ a:hover { color: var(--text-0); }
   .method-grid { grid-template-columns: 1fr 1fr; }
   .ip-features { grid-template-columns: 1fr 1fr; }
   .hero-metrics { gap: 2.5rem; }
+  .pipe-row { grid-template-columns: 1fr 140px 110px; }
 }
 
 /* ═══ RESPONSIVE — MOBILE ═══ */
@@ -435,6 +495,9 @@ a:hover { color: var(--text-0); }
   .pub { padding: 1.4rem 1.5rem; }
   .pub h3 { font-size: 1rem; }
 
+  .pipe-row { grid-template-columns: 1fr; gap: 0.35rem; padding: 1rem 1.1rem; }
+  .pipe-journal { font-size: 0.68rem; }
+
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-meta { text-align: center; }
 }
@@ -456,7 +519,7 @@ a:hover { color: var(--text-0); }
       <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#methodology">Methods</a>
-      <a href="#ip">Patents</a>
+      <a href="#ip">IP</a>
       <a href="#contact">Contact</a>
     </div>
     <button class="nav-mobile" id="navToggle" aria-label="Toggle menu">
@@ -469,7 +532,7 @@ a:hover { color: var(--text-0); }
     <a href="#about">About</a>
     <a href="#research">Research</a>
     <a href="#methodology">Methods</a>
-    <a href="#ip">Patents</a>
+    <a href="#ip">IP</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -483,21 +546,21 @@ a:hover { color: var(--text-0); }
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <p class="hero-tag">Computational Genomics · Neurovascular Biology · Molecular Quality Control</p>
-    <h1>Systematic gene expression analysis across <em>human tissues</em></h1>
-    <p class="hero-desc">Inner Architecture LLC applies discovery-first computational genomics to characterize gene co-expression networks, neurovascular architecture, and endogenous molecular quality control systems in human brain and body tissues.</p>
+    <p class="hero-tag">Correlation Architecture · Cross-Domain Methodology · Independent Research</p>
+    <h1>Measuring what reorganizes when <em>systems change</em></h1>
+    <p class="hero-desc">Inner Architecture LLC develops and validates a correlation-architecture methodology — weighted Jaccard on continuous correlation vectors — for detecting network reorganization in biological, industrial, financial, ecological, and neuroscientific systems. Components first. Relationships between components as the measured signal. Categories as findings, not inputs.</p>
     <div class="hero-metrics">
       <div class="hero-metric">
-        <div class="hero-metric-num">5</div>
+        <div class="hero-metric-num">20</div>
         <div class="hero-metric-label">Manuscripts in Pipeline</div>
       </div>
       <div class="hero-metric">
-        <div class="hero-metric-num">54</div>
-        <div class="hero-metric-label">Human Tissues Analyzed</div>
+        <div class="hero-metric-num">9</div>
+        <div class="hero-metric-label">Validated Research Domains</div>
       </div>
       <div class="hero-metric">
-        <div class="hero-metric-num">17,382</div>
-        <div class="hero-metric-label">RNA-seq Samples Processed</div>
+        <div class="hero-metric-num">15</div>
+        <div class="hero-metric-label">Target Journals Across Fields</div>
       </div>
     </div>
   </div>
@@ -512,29 +575,39 @@ a:hover { color: var(--text-0); }
 <section class="section" id="about">
   <div class="section-inner reveal">
     <p class="section-tag">About</p>
-    <h2 class="section-title">Discovery-first genomics research</h2>
-    <p class="section-desc">An independent research organization conducting systematic computational analysis of gene expression networks across human tissues.</p>
+    <h2 class="section-title">A research program built around relational measurement</h2>
+    <p class="section-desc">An independent research organization developing a domain-invariant methodology for measuring how correlation architectures reorganize when complex systems change state.</p>
 
     <div class="about-layout">
       <div class="about-prose">
-        <p><strong>Inner Architecture LLC</strong> is an independent research organization headquartered in Canton, Ohio, conducting systematic computational genomics research across human tissues and disease states.</p>
-        <p>The company employs a <strong>discovery-first methodology</strong> — comprehensive correlation analysis across large-scale genomic datasets to identify previously uncharacterized biological relationships. This approach has identified ultra-high gene correlations (r&nbsp;&gt;&nbsp;0.90) between quality control-associated genes in healthy brain tissue, with systematic disruption in neurodegenerative and psychiatric conditions.</p>
-        <p>Our research program spans <strong>neurovascular biology, epigenetic regulation, neurodegeneration,</strong> and <strong>psychiatric genomics</strong>, unified by a focus on the sigma-1 receptor system and its associated gene networks as endogenous molecular quality control machinery.</p>
-        <p>Inner Architecture holds <strong>European Genome-Phenome Archive institutional access</strong> for controlled human genomic datasets and is registered as a <strong>federal contractor on SAM.gov</strong>, positioning the company for future NIH and DOD grant applications alongside established research universities.</p>
+        <p><strong>Inner Architecture LLC</strong> is an independent research organization headquartered in Canton, Ohio. The company's core scientific contribution is the development and cross-domain validation of <strong>weighted Jaccard (WJ) similarity on continuous correlation vectors</strong> as a general tool for quantifying network reorganization — how much of a system's pairwise relationship structure is preserved between conditions, and how much is restructured.</p>
+        <p>The methodology is designed around a single governing principle: <strong>relationships between components carry information that components alone do not</strong>. For an <em>N</em>-component system, pairwise relationships grow as <em>N</em>(<em>N</em>−1)/2 and the full multi-way configuration space grows faster still. Conventional monitoring collapses this relational information into component-level aggregates and loses the architectural signal. WJ preserves it, and detects reorganization earlier than threshold-based or variance-based alternatives across every domain we have tested.</p>
+        <p>The research program currently comprises <strong>20 manuscripts across 15 target journals</strong>, spanning computational genomics, clinical transcriptomics, industrial predictive maintenance, financial regime detection, ecological tipping-point detection, functional brain connectivity, seismology, structural health monitoring, cybersecurity, quantum hardware characterization, and climate dynamics. The first paper in the program — a meta-analysis of ALDH1A1 co-expression network reorganization across seven independent Parkinson's disease substantia nigra cohorts — is <strong>in production at <em>Frontiers in Aging Neuroscience</em></strong>.</p>
+        <p>Inner Architecture holds <strong>European Genome-Phenome Archive</strong> institutional access, is registered as a <strong>federal contractor on SAM.gov</strong>, and operates a full methodology-governance architecture — auditors, validators, and execution-trace memory — that enforces WJ methodology compliance at the analytical level before any pipeline runs.</p>
 
         <div class="founder">
           <div class="founder-header">
             <div class="founder-avatar">DH</div>
             <div>
               <div class="founder-name">Drake H. Harbert</div>
-              <div class="founder-role">Founder & CEO · Principal Investigator</div>
+              <div class="founder-role">Founder · Principal Investigator · Peer Reviewer, <em>Journal of Psychopharmacology</em></div>
             </div>
           </div>
-          <p>Drake Harbert is a computational genomics researcher specializing in systematic co-expression analysis and gene network characterization. He adopted a discovery-first analytical methodology used across all Inner Architecture research programs and has built computational pipelines processing over 17,000 RNA-seq samples from the Genotype-Tissue Expression project, Human Protein Atlas, and Gene Expression Omnibus. His research has identified novel gene network relationships in neurovascular biology, neurodegenerative disease, and psychiatric genomics.</p>
+          <p>Drake Harbert is the architect of the WJ methodology and author on all 20 manuscripts in the Inner Architecture pipeline. His work integrates genome-wide co-expression analysis, multivariate industrial sensor monitoring, functional neuroimaging, and cross-domain methodological validation. He serves as a peer reviewer for the <em>Journal of Psychopharmacology</em> (SAGE), and holds a provisional patent on endogenous DMT biosensor technology. ORCID: <a href="https://orcid.org/0009-0007-7740-3616" target="_blank" rel="noopener">0009-0007-7740-3616</a>.</p>
         </div>
       </div>
 
       <div class="cred-stack">
+        <div class="cred-card">
+          <p class="cred-type">First Publication</p>
+          <h4>Frontiers in Aging Neuroscience</h4>
+          <p>ALDH1A1-Dopaminergic co-expression meta-analysis accepted; in production, May 2026 release window</p>
+        </div>
+        <div class="cred-card">
+          <p class="cred-type">Peer Review Service</p>
+          <h4>Journal of Psychopharmacology</h4>
+          <p>Invited reviewer for SAGE-published pharmacology research; completed review of a serotonin-receptor response study</p>
+        </div>
         <div class="cred-card">
           <p class="cred-type">Institutional Access</p>
           <h4>European Genome-Phenome Archive</h4>
@@ -547,18 +620,18 @@ a:hover { color: var(--text-0); }
         </div>
         <div class="cred-card">
           <p class="cred-type">Primary Data Sources</p>
-          <h4>GTEx v8 · HPA v23 · GEO</h4>
-          <p>Systematic analysis across 17,382 RNA-seq samples from 54 tissues with cell-type deconvolution</p>
+          <h4>GTEx · GEO · OpenNeuro · NASA C-MAPSS · Scania · Tennessee Eastman</h4>
+          <p>Cross-domain validation spans public genomics repositories, industrial benchmark datasets, and openly-released human neuroimaging archives</p>
         </div>
         <div class="cred-card">
-          <p class="cred-type">Statistical Framework</p>
-          <h4>FDR-Corrected Co-expression Analysis</h4>
-          <p>Genome-wide Pearson correlation with Benjamini-Hochberg correction, cross-platform validation, and multi-species verification</p>
+          <p class="cred-type">Governance Architecture</p>
+          <h4>Automated WJ Compliance Enforcement</h4>
+          <p>Pipeline validators, compliance auditors, provenance tracking, and execution-trace memory enforce methodology before any analysis runs — a structural safeguard against domain-conventional drift</p>
         </div>
         <div class="cred-card">
           <p class="cred-type">Intellectual Property</p>
-          <h4>Provisional Patent Filed</h4>
-          <p>Biosensor technology for real-time endogenous DMT detection leveraging SIGMAR1 binding characteristics</p>
+          <h4>Provisional Patent · WJ Methodology</h4>
+          <p>DMT biosensor patent filed; WJ methodology framework under active development as commercial-licensable research instrumentation</p>
         </div>
       </div>
     </div>
@@ -574,43 +647,156 @@ a:hover { color: var(--text-0); }
 <section class="section" id="research">
   <div class="section-inner reveal">
     <p class="section-tag">Research & Publications</p>
-    <h2 class="section-title">Active manuscript pipeline</h2>
-    <p class="section-desc">Five independent manuscripts spanning neurovascular biology, epigenetic coordination, neurodegeneration, and psychiatric genomics.</p>
+    <h2 class="section-title">Active manuscript portfolio</h2>
+    <p class="section-desc">Twenty manuscripts across fifteen target journals, unified by the weighted Jaccard correlation-architecture methodology. Five featured below; the full pipeline follows.</p>
 
     <div class="pub-list">
-      <div class="pub">
-        <span class="pub-status revision">In Revision</span>
-        <h3>SIGMAR1-FKBP5 Decoupling in Post-Traumatic Stress Disorder: Stress-Induced Disruption of Sigma-1 Receptor Gene Networks in Human Brain Tissue</h3>
-        <p class="pub-journal"><em>PLoS ONE</em> · Revision submitted</p>
-        <p class="pub-abstract">Systematic co-expression analysis across multiple brain regions reveals decoupling between SIGMAR1 and the stress-response gene FKBP5 in PTSD brain tissue, with preserved network structure in neurotypical controls. Identifies region-specific vulnerability patterns consistent with selective disruption of molecular quality control coordination under chronic stress.</p>
+
+      <div class="pub accepted">
+        <span class="pub-status accepted">Accepted · In Production</span>
+        <h3>ALDH1A1-Dopaminergic Gene Co-expression in Human Substantia Nigra: Meta-Analysis of Disease-Associated Correlation Changes Across Seven Independent Parkinson's Disease Datasets</h3>
+        <p class="pub-journal"><em>Frontiers in Aging Neuroscience</em> · Article 1806505 · DOI pending</p>
+        <p class="pub-abstract">Seven-cohort random-effects meta-analysis (n = 156; 70 control, 86 PD) demonstrating disease-selective attenuation of ALDH1A1's co-expression with dopaminergic pathway genes in substantia nigra. ALDH1A1-dopamine correlations fall from a control mean r = 0.92 to r = 0.54 in PD (mean Δr = −0.336), while intra-dopaminergic correlations attenuate less than half as much. Permutation testing establishes selectivity at p = 0.0052. Category-level attenuation partitioning identifies ALDH1A1-associated coordination as the primary site of disease signal.</p>
       </div>
 
       <div class="pub">
         <span class="pub-status review">In Peer Review</span>
-        <h3>ALDH1A1 Co-expression Network Disruption in Parkinson's Disease: A Multi-Dataset Meta-Analysis of Substantia Nigra Transcriptomes</h3>
-        <p class="pub-journal"><em>Frontiers in Aging Neuroscience</em> · Passed research integrity screening</p>
-        <p class="pub-abstract">Cross-dataset meta-analysis demonstrating systematic ALDH1A1 co-expression network disruption in Parkinson's disease substantia nigra. Fisher's z-transformation and random-effects modeling reveal coordinated loss of dopaminergic neuron gene relationships with heterogeneity analysis across independent cohorts.</p>
+        <h3>Cell-Intrinsic Hippocampal Reorganization of the RQC Ubiquitination Ligase LTN1 in Human Brain: A Weighted Jaccard Analysis Dissociating LTN1, NEMF, and PELO Transcriptional Architectures</h3>
+        <p class="pub-journal"><em>Neurobiology of Disease</em> · GTEx v8 · 5 brain regions · 14,284 genes</p>
+        <p class="pub-abstract">WJ applied to genome-wide co-expression vectors of three ribosome-associated quality control (RQC) factors across five brain regions. Hippocampus shows elevated cross-region reorganization for LTN1 (+0.060, p = 0.030) and NEMF (+0.050, p = 0.059), but not PELO. Partial correlation controlling for six cell-type composition proxies preserves the LTN1 hippocampus effect (+0.033, signed p = 0.005) but eliminates the NEMF effect, dissociating cell-intrinsic from cell-composition-dependent regional regulation. Five negative-control genes show no comparable effect. Signed-versus-unsigned WJ divergence of 0.068 indicates roughly 30% of regional reorganization arises from correlation-sign inversions that binary overlap cannot detect.</p>
       </div>
 
       <div class="pub">
         <span class="pub-status review">In Peer Review</span>
-        <h3>Protocadherin Epigenetic Coordination: Methylation-Expression Coupling Patterns Across Human Brain Regions</h3>
-        <p class="pub-journal"><em>Frontiers in Genetics</em> · Passed research integrity screening</p>
-        <p class="pub-abstract">Systematic characterization of PCDH gene family methylation-expression relationships across human brain development, revealing coordinated epigenetic regulation patterns with implications for neurodevelopmental and psychiatric conditions.</p>
+        <h3>Sigma-1 and Sigma-2 Receptors Exhibit Divergent Genome-Wide Co-expression Architectures in Human Brain Despite Shared Subcellular Localization</h3>
+        <p class="pub-journal"><em>Molecular Neurobiology</em> · Manuscript 1830847 · GTEx v8 · n = 209 · 16,225 genes</p>
+        <p class="pub-abstract">Three WJ formulations — shifted, unsigned, and signed — applied to SIGMAR1 and TMEM97 genome-wide correlation vectors reveal that the two receptors share the majority of their global transcriptional architecture (WJ shifted = 0.964, unsigned = 0.907, signed = 0.906; rank-identical across 21 pairwise comparisons, ρ = 1.000). Their top-5% co-expression networks, however, overlap by only 10.0% (binary Jaccard = 0.100). The 2.1-fold variation in WJ-versus-binary dissociation gap tracks known biological relatedness rather than a fixed methodological property. Distinct GO enrichments — SIGMAR1 mitochondrial translation and TCA cycle; TMEM97 ubiquitin-mediated proteolysis and neurodegeneration — provide transcriptomic rationale for subtype-selective pharmacology.</p>
       </div>
 
       <div class="pub">
         <span class="pub-status review">In Peer Review</span>
-        <h3>SIGMAR1 as Dual-Modality Neural Substrate: Integrating Chaperone Function and Receptor Signaling in a Self-Referential Quality Control Architecture</h3>
-        <p class="pub-journal"><em>Frontiers in Pharmacology</em> · Passed research integrity screening</p>
-        <p class="pub-abstract">Theoretical framework supported by genome-wide co-expression evidence proposing the sigma-1 receptor operates as a unified quality control system bridging protein homeostasis with receptor-mediated signaling. The self-referential architecture generates specific predictions for neuroprotection and neurodegeneration research.</p>
+        <h3>Correlation Network Health Indicator for Early Degradation Detection and Subsystem Cascade Localization in Multivariate Sensor Systems</h3>
+        <p class="pub-journal"><em>Mechanical Systems and Signal Processing</em> · NASA C-MAPSS · Scania APS · Tennessee Eastman</p>
+        <p class="pub-abstract">Cross-domain validation of WJ as a scalar health indicator on three industrial benchmarks: 21-sensor turbofan engines (709 units), 101-sensor heavy trucks (60,000 units), and 52-sensor chemical process (20 fault types). WJ detects degradation onset 10–22.5 percentage points earlier in operational life than Hotelling T², Squared Prediction Error, and Mahalanobis distance across all four C-MAPSS sub-datasets, while providing subsystem-level cascade localization and fault-type fingerprinting that scalar monitoring statistics cannot offer. An analytical variance framework explains why the conventional binary Jaccard index fails on the same data: binarization incurs a 1/τ variance penalty that absorbs the degradation signal into sampling noise.</p>
       </div>
 
       <div class="pub">
-        <span class="pub-status complete">Manuscript Complete</span>
-        <h3>Systematic Co-expression Analysis Reveals Vascular Compartmentalization of Indolethylamine N-Methyltransferase Across Human Tissues</h3>
-        <p class="pub-journal"><em>Target: Frontiers in Molecular Neuroscience</em></p>
-        <p class="pub-abstract">Cell-type deconvolution across 54 GTEx tissues demonstrates INMT co-expression with vascular smooth muscle and endothelial markers in brain (r&nbsp;=&nbsp;0.4–0.87) with near-zero neuronal correlations, while SIGMAR1 shows the inverse pattern. Convergent validation from Human Protein Atlas single-cell annotation and genome-wide enrichment analysis identifies a paracrine architecture with tissue-specific compartmentalization.</p>
+        <span class="pub-status review">In Peer Review</span>
+        <h3>Weighted Jaccard Similarity Analysis Reveals Incomplete Recovery of Functional Connectivity Architecture Following Propofol-Induced Unconsciousness</h3>
+        <p class="pub-journal"><em>NeuroImage</em> · OpenNeuro ds006623 · n = 24 · 456 ROIs</p>
+        <p class="pub-abstract">Subject-level WJ applied to full pairwise Spearman correlation matrices across 456 cortical regions during wakefulness, propofol-induced unconsciousness, and early recovery. All 24 subjects show significant architectural similarity reduction under anesthesia (mean WJ = 0.499, SD = 0.043; Wilcoxon p &lt; 0.001), with per-subject connectivity preserving approximately half of its weighted edge structure. Recovery is minimal: mean recovery-phase WJ = 0.522, per-subject recovery fraction = 3.8% (p = 0.021). All eight canonical networks show significant reduction (FDR-corrected); only the default mode network shows significant recovery. Propofol concentration at loss of responsiveness correlates with dissimilarity magnitude (ρ = −0.591, p = 0.002).</p>
+      </div>
+
+    </div>
+
+    <div class="pipeline-wrap">
+      <div class="pipeline-head">
+        <h3>Full manuscript pipeline</h3>
+        <p>20 manuscripts · 15 target journals · 9 validated domains</p>
+      </div>
+      <div class="pipeline-list">
+
+        <div class="pipe-row">
+          <div class="pipe-title">ALDH1A1-Dopaminergic co-expression meta-analysis in Parkinson's disease</div>
+          <div class="pipe-journal">Frontiers in Aging Neuroscience</div>
+          <span class="pipe-status accepted">Accepted</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">Cell-intrinsic hippocampal reorganization of the RQC ligase LTN1</div>
+          <div class="pipe-journal">Neurobiology of Disease</div>
+          <span class="pipe-status review">Peer Review</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">Sigma-1 / Sigma-2 divergent co-expression architectures</div>
+          <div class="pipe-journal">Molecular Neurobiology</div>
+          <span class="pipe-status review">Peer Review</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">Correlation network health indicator for industrial degradation detection</div>
+          <div class="pipe-journal">Mech. Systems & Signal Processing</div>
+          <span class="pipe-status review">Peer Review</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">Incomplete recovery of connectivity architecture after propofol</div>
+          <div class="pipe-journal">NeuroImage</div>
+          <span class="pipe-status review">Peer Review</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">EIF2S1 translational hub co-expression architecture</div>
+          <div class="pipe-journal">Frontiers in Molecular Neuroscience</div>
+          <span class="pipe-status review">Peer Review</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">SIGMAR1 dual-modality chaperone-receptor architecture</div>
+          <div class="pipe-journal">Frontiers in Pharmacology</div>
+          <span class="pipe-status review">Peer Review</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">PTSD multi-cohort sign-inversion connectivity reorganization</div>
+          <div class="pipe-journal">Journal of Psychiatric Research</div>
+          <span class="pipe-status review">Peer Review</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">Clinical WJ validation in sepsis transcriptomics</div>
+          <div class="pipe-journal">Clinical Biomarkers in Medicine</div>
+          <span class="pipe-status review">Peer Review</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">Gene-to-brain cross-scale WJ correspondence</div>
+          <div class="pipe-journal">Network Neuroscience (reframed)</div>
+          <span class="pipe-status revision">Revision</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">FKBP5-SIGMAR1 decoupling in PTSD — multi-cohort rebuild</div>
+          <div class="pipe-journal">Journal selection in progress</div>
+          <span class="pipe-status revision">Revision</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">WJ tipping-point detection in ecological systems</div>
+          <div class="pipe-journal">Ecological Indicators · SSRN preprint live</div>
+          <span class="pipe-status ready">Submission Ready</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">WJ regime detection in individual-stock correlation networks</div>
+          <div class="pipe-journal">Physica A</div>
+          <span class="pipe-status ready">Submission Ready</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">WJ detection of climate tipping-point precursors</div>
+          <div class="pipe-journal">Geophysical Research Letters</div>
+          <span class="pipe-status ready">Submission Ready</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">DMT &amp; psychedelic neural-network reorganization</div>
+          <div class="pipe-journal">Journal of Psychopharmacology</div>
+          <span class="pipe-status pipeline">Drafting</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">Quantum hardware calibration-architecture WJ</div>
+          <div class="pipe-journal">npj Quantum Information</div>
+          <span class="pipe-status pipeline">Drafting</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">Structural health monitoring via sensor-correlation reorganization</div>
+          <div class="pipe-journal">Structural Health Monitoring</div>
+          <span class="pipe-status pipeline">Drafting</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">Cybersecurity threat detection via flow-feature correlation reorganization</div>
+          <div class="pipe-journal">Computers &amp; Security</div>
+          <span class="pipe-status pipeline">Drafting</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">WJ as a relational alternative to network-comparison tests in psychology</div>
+          <div class="pipe-journal">Psychological Methods</div>
+          <span class="pipe-status pipeline">Drafting</span>
+        </div>
+        <div class="pipe-row">
+          <div class="pipe-title">EEG seizure prediction via bipolar-channel correlation reorganization</div>
+          <div class="pipe-journal">Clinical Neurophysiology</div>
+          <span class="pipe-status pipeline">Drafting</span>
+        </div>
+
       </div>
     </div>
 
@@ -618,34 +804,34 @@ a:hover { color: var(--text-0); }
       <p class="section-tag">Research Focus Areas</p>
       <div class="focus-grid">
         <div class="focus">
-          <p class="focus-tag">Neurovascular</p>
-          <h4>INMT Vascular Architecture</h4>
-          <p>Characterizing cell-type-specific expression and co-expression patterns of INMT across the neurovascular unit in human brain tissues</p>
+          <p class="focus-tag">Biomedical Genomics</p>
+          <h4>Co-expression architecture in disease</h4>
+          <p>Correlation-network reorganization as a primary disease signal in Parkinson's, PTSD, ALS-associated pathways, and sigma-receptor biology</p>
         </div>
         <div class="focus">
-          <p class="focus-tag">Neurodegeneration</p>
-          <h4>Network Disruption in Disease</h4>
-          <p>Systematic mapping of gene co-expression breakdown in Alzheimer's, Parkinson's, and ALS</p>
+          <p class="focus-tag">Functional Neuroscience</p>
+          <h4>Connectivity reorganization across states</h4>
+          <p>Subject-level connectivity-architecture similarity during anesthesia, unconsciousness, and cross-scale gene-to-brain correspondence</p>
         </div>
         <div class="focus">
-          <p class="focus-tag">Epigenetics</p>
-          <h4>Methylation-Expression Coupling</h4>
-          <p>Protocadherin family epigenetic coordination and methylation pathway interactions across brain development</p>
+          <p class="focus-tag">Clinical Translation</p>
+          <h4>WJ biomarkers for acute and chronic conditions</h4>
+          <p>Blood-transcriptomic architecture reorganization in sepsis, trauma, and stress-related network decoupling</p>
         </div>
         <div class="focus">
-          <p class="focus-tag">Psychiatric Genomics</p>
-          <h4>Stress Network Disruption</h4>
-          <p>PTSD and trauma-induced decoupling of quality control gene networks from stress-response systems</p>
+          <p class="focus-tag">Industrial Systems</p>
+          <h4>Predictive maintenance &amp; fault fingerprinting</h4>
+          <p>Sensor-correlation reorganization as an interpretable, unsupervised health indicator with subsystem-level cascade localization</p>
         </div>
         <div class="focus">
-          <p class="focus-tag">Quality Control</p>
-          <h4>SIGMAR1 Network Biology</h4>
-          <p>Genome-wide characterization of sigma-1 receptor co-expression networks across neurological conditions</p>
+          <p class="focus-tag">Physical Sciences</p>
+          <h4>Climate, seismology, quantum hardware</h4>
+          <p>Pre-transition correlation reorganization in climate regimes; seismic-station networks; qubit-calibration drift detection</p>
         </div>
         <div class="focus">
-          <p class="focus-tag">Methodology</p>
-          <h4>Discovery-First Genomics</h4>
-          <p>Development of systematic co-expression analysis pipelines for hypothesis-generating research across large-scale datasets</p>
+          <p class="focus-tag">Quantitative Systems</p>
+          <h4>Finance, ecology, cybersecurity</h4>
+          <p>Regime-change detection in individual-stock networks, ecological parameter tipping points, and network-flow correlation reorganization</p>
         </div>
       </div>
     </div>
@@ -661,28 +847,36 @@ a:hover { color: var(--text-0); }
 <section class="section" id="methodology">
   <div class="section-inner reveal">
     <p class="section-tag">Methodology</p>
-    <h2 class="section-title">Analytical pipeline</h2>
-    <p class="section-desc">A systematic four-stage approach to discovering and validating novel gene expression relationships across human tissues and disease states.</p>
+    <h2 class="section-title">Weighted Jaccard on continuous correlation vectors</h2>
+    <p class="section-desc">A domain-invariant methodology for quantifying how much of a system's correlation architecture is preserved between conditions, and how much reorganizes.</p>
+
+    <div class="method-intro">
+      <h4>What WJ measures</h4>
+      <p>Given any two conditions <em>A</em> and <em>B</em> of a system with <em>N</em> components (genes, sensors, neural regions, stocks, stations), compute the full <em>N</em>(<em>N</em>−1)/2 pairwise correlation matrix under each condition. WJ compares the two correlation vectors as a continuous similarity measure — no binarization threshold, no pre-selection of &ldquo;significant&rdquo; edges, no dependence on component-category labels. The result is a single scalar describing how much of the relational architecture survives the transition.</p>
+      <p class="wj-eq">WJ(a, b) = Σ min(|a<sub>i</sub>|, |b<sub>i</sub>|) / Σ max(|a<sub>i</sub>|, |b<sub>i</sub>|)</p>
+      <p style="margin-top: 1rem;">Every pipeline computes unsigned and signed variants in parallel. Their divergence directly measures the fraction of reorganization arising from correlation-sign inversion — structural signal that binary edge-overlap metrics cannot detect.</p>
+    </div>
+
     <div class="method-grid">
       <div class="method-step">
         <div class="method-num">01</div>
-        <h4>Genome-Wide Discovery</h4>
-        <p>Comprehensive Pearson correlation across all expressed gene pairs with FDR correction for multiple testing</p>
+        <h4>Fundamental-Unit Identification</h4>
+        <p>Identify the smallest individual measurement in the domain — individual gene, individual sensor, individual region. Never a category, subsystem label, or pre-aggregated bundle.</p>
       </div>
       <div class="method-step">
         <div class="method-num">02</div>
-        <h4>Cross-Platform Validation</h4>
-        <p>Replication across independent datasets, platforms, and cohorts to distinguish biological signal from artifact</p>
+        <h4>Full Pairwise Relationship Matrix</h4>
+        <p>Compute the complete pairwise correlation matrix across all fundamental units. No pre-filtering. No hypothesis about which pairs should relate. Categories emerge from the architecture, not from assumption.</p>
       </div>
       <div class="method-step">
         <div class="method-num">03</div>
-        <h4>Cell-Type Deconvolution</h4>
-        <p>Integration with single-cell reference panels and HPA annotations to resolve cell-type-specific expression</p>
+        <h4>WJ Between Conditions</h4>
+        <p>Apply unsigned and signed WJ to compare correlation vectors across conditions, timepoints, or regimes. Report implementation divergence — the sign-inversion fraction — as a first-class output.</p>
       </div>
       <div class="method-step">
         <div class="method-num">04</div>
-        <h4>Disease Comparison</h4>
-        <p>Systematic network comparison using Fisher's z-test and random-effects meta-analytic models</p>
+        <h4>Structure-Preserving Inference</h4>
+        <p>Permutation nulls with 1,000+ iterations, FDR correction across all pairs, and structure-aware null models (Mantel permutation, spin tests) where matrix-derived pairs create dependence.</p>
       </div>
     </div>
   </div>
@@ -697,30 +891,59 @@ a:hover { color: var(--text-0); }
 <section class="section" id="ip">
   <div class="section-inner reveal">
     <p class="section-tag">Intellectual Property</p>
-    <h2 class="section-title">Patent portfolio</h2>
-    <p class="section-desc">Translating computational discoveries into diagnostic and research technologies.</p>
-    <div class="ip-card">
-      <p class="ip-status">Provisional Patent Filed · 2025</p>
-      <h3>Endogenous DMT Biosensor Technology</h3>
-      <p>Real-time biosensor system for measuring endogenous N,N-dimethyltryptamine concentrations in biological fluids. Leverages sigma-1 receptor binding affinity characteristics for physiological DMT detection with applications in diagnostic monitoring, research instrumentation, and therapeutic guidance.</p>
-      <div class="ip-features">
-        <div class="ip-feat">
-          <h5>Diagnostic Monitoring</h5>
-          <p>Non-invasive measurement of endogenous DMT levels as a biomarker for neurovascular function</p>
-        </div>
-        <div class="ip-feat">
-          <h5>Research Instrumentation</h5>
-          <p>Laboratory detection platform for quantifying DMT in tissue samples, blood, and cerebrospinal fluid</p>
-        </div>
-        <div class="ip-feat">
-          <h5>Therapeutic Monitoring</h5>
-          <p>Real-time feedback during pharmacological interventions targeting sigma-1 receptor pathways</p>
-        </div>
-        <div class="ip-feat">
-          <h5>Point-of-Care Potential</h5>
-          <p>Miniaturizable sensor architecture for clinical deployment in neurology and psychiatry</p>
+    <h2 class="section-title">Research instrumentation &amp; methodology framework</h2>
+    <p class="section-desc">Translating cross-domain methodology and targeted computational discoveries into research instrumentation, diagnostic platforms, and licensable intellectual property.</p>
+
+    <div class="ip-stack">
+
+      <div class="ip-card">
+        <p class="ip-status">Methodology Framework · Under Active Development</p>
+        <h3>Weighted Jaccard Cross-Domain Correlation-Architecture Framework</h3>
+        <p>A domain-invariant methodology for quantifying network reorganization in any system producing multivariate time-series or cross-condition measurement data. Core algorithmic framework, reference implementations, governance-architecture tooling, and domain-specific validation pipelines constitute active intellectual property with licensing potential in industrial monitoring, clinical diagnostics, financial risk instrumentation, and physical-sciences instrumentation.</p>
+        <div class="ip-features">
+          <div class="ip-feat">
+            <h5>Industrial Monitoring</h5>
+            <p>Unsupervised early-degradation detection with subsystem-level cascade localization — validated on C-MAPSS, Scania, Tennessee Eastman benchmarks</p>
+          </div>
+          <div class="ip-feat">
+            <h5>Clinical Diagnostics</h5>
+            <p>Transcriptomic-architecture reorganization as a disease-state biomarker framework — validated in Parkinson's, PTSD, and sepsis cohorts</p>
+          </div>
+          <div class="ip-feat">
+            <h5>Functional Neuroimaging</h5>
+            <p>Subject-level connectivity-architecture similarity measurement for anesthesia, consciousness, and cross-scale gene-to-brain correspondence</p>
+          </div>
+          <div class="ip-feat">
+            <h5>Governance Architecture</h5>
+            <p>Automated compliance auditing, pipeline validation, provenance tracking, and execution-trace memory — safeguards against methodology drift</p>
+          </div>
         </div>
       </div>
+
+      <div class="ip-card">
+        <p class="ip-status">Provisional Patent Filed · 2025</p>
+        <h3>Endogenous DMT Biosensor Technology</h3>
+        <p>Real-time biosensor system for measuring endogenous N,N-dimethyltryptamine concentrations in biological fluids. Leverages sigma-1 receptor binding affinity characteristics for physiological DMT detection with applications in diagnostic monitoring, research instrumentation, and therapeutic guidance.</p>
+        <div class="ip-features">
+          <div class="ip-feat">
+            <h5>Diagnostic Monitoring</h5>
+            <p>Non-invasive measurement of endogenous DMT levels as a biomarker for neurovascular function</p>
+          </div>
+          <div class="ip-feat">
+            <h5>Research Instrumentation</h5>
+            <p>Laboratory detection platform for quantifying DMT in tissue samples, blood, and cerebrospinal fluid</p>
+          </div>
+          <div class="ip-feat">
+            <h5>Therapeutic Monitoring</h5>
+            <p>Real-time feedback during pharmacological interventions targeting sigma-1 receptor pathways</p>
+          </div>
+          <div class="ip-feat">
+            <h5>Point-of-Care Potential</h5>
+            <p>Miniaturizable sensor architecture for clinical deployment in neurology and psychiatry</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -733,12 +956,12 @@ a:hover { color: var(--text-0); }
      ═══════════════════════════════════════ -->
 <section class="section" id="contact">
   <div class="section-inner reveal">
-    <p class="section-tag">Contact & Collaboration</p>
+    <p class="section-tag">Contact &amp; Collaboration</p>
     <h2 class="section-title">Work with us</h2>
     <div class="contact-layout">
       <div class="contact-left">
         <h3>Open to collaboration</h3>
-        <p>Inner Architecture LLC actively seeks academic and industry collaborators with complementary expertise in experimental neuroscience, single-cell genomics, protein biophysics, and computational biology. We bring systematic computational analysis capabilities and novel gene network findings to collaborative research programs.</p>
+        <p>Inner Architecture LLC is actively seeking academic, industry, and clinical collaborators whose systems generate multivariate data and whose questions concern how component relationships reorganize when state changes. We bring the WJ correlation-architecture methodology, cross-domain validation experience, and a working governance architecture; we seek domain expertise and access to high-quality measurement data.</p>
         <div class="ch-list">
           <!-- EDIT EMAIL -->
           <a href="mailto:Drake@innerarchitecturellc.com" class="ch">
@@ -760,6 +983,24 @@ a:hover { color: var(--text-0); }
               <p class="ch-value">Drake H. Harbert</p>
             </div>
           </a>
+          <a href="https://orcid.org/0009-0007-7740-3616" class="ch" target="_blank" rel="noopener">
+            <div class="ch-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7 8v8M7 6.5v.01M10 9h3.5a2.5 2.5 0 0 1 0 5H10V9z"/></svg>
+            </div>
+            <div>
+              <p class="ch-label">ORCID</p>
+              <p class="ch-value">0009-0007-7740-3616</p>
+            </div>
+          </a>
+          <a href="https://github.com/nwharbert8-ui" class="ch" target="_blank" rel="noopener">
+            <div class="ch-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </div>
+            <div>
+              <p class="ch-label">GitHub (Research)</p>
+              <p class="ch-value">github.com/nwharbert8-ui</p>
+            </div>
+          </a>
           <div class="ch">
             <div class="ch-icon">
               <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -775,20 +1016,24 @@ a:hover { color: var(--text-0); }
         <h3 class="collab-title">Collaboration opportunities</h3>
         <div class="collab-list">
           <div class="collab">
-            <h4>Experimental Validation</h4>
-            <p>Wet-lab partners for immunohistochemistry, binding assays, and direct cell-type resolution of computational predictions</p>
+            <h4>Clinical Partners</h4>
+            <p>Hospital systems and clinical trial groups with multivariate patient measurement data — transcriptomics, physiological channels, imaging — for WJ-based biomarker development</p>
           </div>
           <div class="collab">
-            <h4>Single-Cell Genomics</h4>
-            <p>Access to brain single-cell RNA-seq datasets for direct validation of cell-type deconvolution findings</p>
+            <h4>Industrial Partners</h4>
+            <p>Organizations with multi-sensor industrial assets interested in interpretable unsupervised health monitoring with subsystem cascade localization</p>
           </div>
           <div class="collab">
-            <h4>Clinical Translation</h4>
-            <p>Neurology and psychiatry partners for sigma-1 receptor-based biomarker development</p>
+            <h4>Academic Collaboration</h4>
+            <p>Research groups extending WJ methodology to new domains; co-PI arrangements on NIH R01/R21 applications; data-sharing partnerships</p>
           </div>
           <div class="collab">
-            <h4>Grant Partnerships</h4>
-            <p>Academic institutions for co-PI arrangements on NIH R01/R21 applications</p>
+            <h4>Data Access Partnerships</h4>
+            <p>Access to under-analyzed multivariate datasets — experimental, observational, or operational — where the question is how relationships between components change</p>
+          </div>
+          <div class="collab">
+            <h4>Peer Review Service</h4>
+            <p>Actively reviewing for the <em>Journal of Psychopharmacology</em>; available for methodological review on cross-domain correlation-network papers</p>
           </div>
         </div>
       </div>
@@ -801,7 +1046,7 @@ a:hover { color: var(--text-0); }
     <div class="footer-brand">Inner Architecture LLC</div>
     <div class="footer-meta">
       <span>Canton, Ohio · United States</span>
-      <span>&copy; 2025 Inner Architecture LLC. All rights reserved.</span>
+      <span>&copy; 2026 Inner Architecture LLC. All rights reserved.</span>
     </div>
   </div>
 </footer>
